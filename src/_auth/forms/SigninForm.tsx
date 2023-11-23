@@ -14,11 +14,9 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import Loader from '@/components/ui/shared/Loader'
+import Loader from '@/components/shared/Loader'
 import { SigninValidation } from '@/lib/validation'
-import {
-  useSignInAccountMutation,
-} from '@/lib/react-query/queriesAndMutations'
+import { useSignInAccountMutation } from '@/lib/react-query/queriesAndMutations'
 import { useUserContext } from '@/context/AuthContext'
 
 const SigninForm = () => {
