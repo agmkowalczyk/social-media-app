@@ -17,18 +17,18 @@ import { Button } from '@/components/ui/button'
 import Loader from '@/components/ui/shared/Loader'
 import { SignupValidation } from '@/lib/validation'
 import {
-  useCreateUserAccount,
-  useSignInAccount,
+  useCreateUserAccountMutation,
+  useSignInAccountMutation,
 } from '@/lib/react-query/queriesAndMutations'
 
 const SignupForm = () => {
   const { toast } = useToast()
 
   const { mutateAsync: createUserAccount, isLoading: isCreatingUser } =
-    useCreateUserAccount()
+    useCreateUserAccountMutation()
 
   const { mutateAsync: signInAccount, isLoading: isSigningIn } =
-    useSignInAccount()
+    useSignInAccountMutation()
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof SignupValidation>>({
@@ -58,7 +58,7 @@ const SignupForm = () => {
 
     if (!session) {
       return toast({
-        title: 'Sign up failed. Please try again,',
+        title: 'Sign in failed. Please try again,',
       })
     }
 
