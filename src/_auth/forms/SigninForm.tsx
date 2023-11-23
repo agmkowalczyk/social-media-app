@@ -17,7 +17,6 @@ import { Button } from '@/components/ui/button'
 import Loader from '@/components/ui/shared/Loader'
 import { SigninValidation } from '@/lib/validation'
 import {
-  useCreateUserAccountMutation,
   useSignInAccountMutation,
 } from '@/lib/react-query/queriesAndMutations'
 import { useUserContext } from '@/context/AuthContext'
