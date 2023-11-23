@@ -1,7 +1,7 @@
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { useToast } from '@/components/ui/use-toast'
 import {
@@ -20,14 +20,17 @@ import {
   useCreateUserAccountMutation,
   useSignInAccountMutation,
 } from '@/lib/react-query/queriesAndMutations'
+import { useUserContext } from '@/context/AuthContext'
 
 const SignupForm = () => {
   const { toast } = useToast()
+  const { checkAuthUser, isLoading: isUserLoading } = useUserContext()
+  const navigate = useNavigate()
 
-  const { mutateAsync: createUserAccount, isLoading: isCreatingUser } =
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
     useCreateUserAccountMutation()
 
-  const { mutateAsync: signInAccount, isLoading: isSigningIn } =
+  const { mutateAsync: signInAccount, isPending: isSigningIn } =
     useSignInAccountMutation()
 
   // 1. Define your form.
@@ -62,13 +65,22 @@ const SignupForm = () => {
       })
     }
 
+    const isLoggedIn = await checkAuthUser()
+
+    if (isLoggedIn) {
+      form.reset()
+
+      navigate('/')
+    } else {
+      return toast({ title: 'Sign up failed. Please try again.' })
+    }
   }
 
   return (
     <Form {...form}>
       <div className='sm:w-420 flex-center flex-col'>
         <img src='./assets/images/logo.svg' alt='logo' />
-        <h2 className='h3-bold md:h2-bold pt-5 sm: pt-12'>
+        <h2 className='h3-bold md:h2-bold pt-5 sm:pt-12'>
           Create a new account
         </h2>
         <p className='text-light-3 small-medium md: base-regular mt-12'>
@@ -132,7 +144,7 @@ const SignupForm = () => {
             )}
           />
           <Button type='submit' className='shad-button_primary mt-4 w-full'>
-            {isCreatingUser ? (
+            {isCreatingAccount || isUserLoading || isSigningIn ? (
               <div className='flex-center gap-2'>
                 <Loader /> Loading...
               </div>

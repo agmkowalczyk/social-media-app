@@ -24,7 +24,7 @@ export async function createUserAccount(user: INewUser) {
       username: user.username,
     })
 
-    return newAccount
+    return newUser
   } catch (error) {
     console.log(error)
     return error
