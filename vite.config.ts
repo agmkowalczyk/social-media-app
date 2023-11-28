@@ -9,4 +9,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  root: './',
+  build: {
+    outDir: 'dist',
+  },
+  publicDir: 'public',
+  
 })
