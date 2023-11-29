@@ -1,3 +1,33 @@
+# Social Media App
+
+## Description
+Social Media App (React, TypeScript, Vite, Appwrite, TailwindCSS)
+
+<p>
+  <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="vite.js">
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react">
+<img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=vite&logoColor=white" alt="typescript">
+  <img src="https://img.shields.io/badge/appwrite-%23ff0077.svg?style=for-the-badge&logo=appwrite&logoColor=white" alt="vite.js">
+  <img src="https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white" alt="react query">
+  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="tailwind">
+</p>
+
+## Live Preview
+[Click here](http://agmkowalczyk.n20.ct8.pl/social-media-app/)
+
+
+
+## Image
+
+![preview](https://github.com/agmkowalczyk/social-media-app/blob/main/screenshot_snapgram1.png "Social Media App")
+
+![preview](https://github.com/agmkowalczyk/social-media-app/blob/main/screenshot_snapgram2.png "Social Media App")
+
+![preview](https://github.com/agmkowalczyk/social-media-app/blob/main/screenshot_snapgram3.png "Social Media App")  
+\
+\
+\
+<br> 
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
