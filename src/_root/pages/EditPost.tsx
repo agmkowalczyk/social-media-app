@@ -5,9 +5,9 @@ import { useParams } from 'react-router-dom'
 
 const EditPost = () => {
   const { id } = useParams()
-  const { data: post, isPending } = useGetPostById(id || '')
+  const { data: post, isLoading } = useGetPostById(id || '')
 
-  if (isPending) return <Loader />
+  if (isLoading) return <Loader />
 
   return (
     <div className='flex flex-1'>

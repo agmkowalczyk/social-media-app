@@ -15,13 +15,13 @@ const Explore = () => {
   const { data: posts, fetchNextPage, hasNextPage } = useGetPosts()
   const [searchValue, setSearchValue] = useState('')
   const debounceValue = useDebounce(searchValue, 500)
-  const { data: searchedPosts, isPending: isSearchFetching } =
+  const { data: searchedPosts, isLoading: isSearchFetching } =
     useSearchPosts(debounceValue)
 
   useEffect(() => {
-    if(inView && !searchValue) fetchNextPage()
+    if (inView && !searchValue) fetchNextPage()
   }, [inView, searchValue])
-  
+
   if (!posts) {
     return (
       <div className='flex-center w-full h-full'>
@@ -80,7 +80,7 @@ const Explore = () => {
           <p className='text-light-4 mt-10 text-center w-full'>End of posts</p>
         ) : (
           posts.pages.map((page, idx) => (
-            <GridPostList key={`page=${idx}`} posts={page.documents} />
+            <GridPostList key={`page=${idx}`} posts={page?.documents} />
           ))
         )}
       </div>
