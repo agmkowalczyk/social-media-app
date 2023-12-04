@@ -13,7 +13,7 @@ Social Media App (React, TypeScript, Vite, Appwrite, TailwindCSS)
 </p>
 
 ## Live Preview
-[Click here](http://agmkowalczyk.n20.ct8.pl/social-media-app/)
+[Click here](https://social-media-app-pi-ochre.vercel.app/)
 
 
 
